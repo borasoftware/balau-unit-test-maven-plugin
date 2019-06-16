@@ -1,0 +1,41 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.borasoftware.balau</groupId>
+	<artifactId>test-project</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>com.borasoftware.balau</groupId>
+				<artifactId>balau-unit-test-maven-plugin</artifactId>
+
+				<configuration>
+					<!-- CMake build directory. If not absolute, the directory is relative to the
+					     project base directory (default = ${project.build.directory}/cmake). -->
+					<cmakeBinaryDirectory>src/test/test-project/target/cmake</cmakeBinaryDirectory>
+
+					<!-- Unit test report directory. If not absolute, the directory is relative to
+					     the project base directory (default = ${project.build.directory}/cmake/unitTestReports). -->
+					<reportDirectory>src/test/test-project/target/cmake/unitTestReports</reportDirectory>
+
+					<!-- Test application path relative to cmakeDirectory (default: bin/Tests then Tests). -->
+					<appPath>bin/Tests</appPath>
+
+					<!-- Balau test framework execution model (default = SingleThreaded). -->
+					<executionModel>SingleThreaded</executionModel>
+
+					<!-- Test name globs to run (default = *Test::*). -->
+					<patterns>
+						<pattern>*Test::*</pattern>
+					</patterns>
+
+					<!-- Custom LD_LIBRARY_PATH to use when running the unit test application (default is empty). -->
+					<ldLibraryPath/>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
