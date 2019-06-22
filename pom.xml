@@ -125,7 +125,7 @@
 			<plugin>
 				<groupId>com.borasoftware.balau</groupId>
 				<artifactId>cmake-maven-plugin</artifactId>
-				<version>19.6.1</version>
+				<version>19.6.3</version>
 
 				<executions>
 					<execution>
